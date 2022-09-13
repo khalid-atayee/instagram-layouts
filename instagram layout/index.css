@@ -1,0 +1,82 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+}
+
+
+.container
+{
+    width: 376px;
+    margin: 0 auto;
+    margin-top: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #C6C6C6;
+    padding: 5px;
+}
+.logo{
+    width: 100px;
+}
+.user-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: .5em;
+}
+.section-header{
+    display: flex;
+    padding: 5px;
+}
+.title{
+    padding-left: 7px;
+}
+.title h3{
+    font-size: 13px;
+    font-weight:bold;
+    margin-bottom: 0%;
+}
+.title p{
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 0%;
+}
+.main-image{
+    width: 100%;
+}
+.section-main{
+    width:375px;
+    height:375px;
+
+}
+.icons{
+    padding: 5px;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+.icon{
+    width: 25px;
+    padding: 2.5px;
+}
+
+.section-footer h4{
+    margin-top: 0%;
+    padding-left: .4em;
+    font-weight: bold;
+    font-size: 12px;
+}
+.section-footer h3{
+    padding-left: .5em;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: -.6em;
+
+}
+.title-description{
+    font-weight: normal;
+    font-weight: 12px;
+}
