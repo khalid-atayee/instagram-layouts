@@ -80,3 +80,7 @@ header{
     font-weight: normal;
     font-weight: 12px;
 }
+
+.background-color-icon{
+    background-color: red;
+}

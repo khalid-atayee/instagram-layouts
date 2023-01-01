@@ -28,13 +28,8 @@ const posts = [
     }
 ]
 
-// let avatar = document.getElementById('avatar');
-// let username = document.getElementById('username');
-// let location = document.getElementById('location');
-// let likeBtn;
-window.onload=function(){
-    // let addLikeBtn;
-    let main = document.getElementById('main');
+
+let main = document.getElementById('main')
     
     for(let count=0; count<posts.length; count++){
         main.innerHTML+= `
@@ -51,7 +46,7 @@ window.onload=function(){
         </section>
         <section class="section-footer">
         <div class="icons">
-        <img id="${"addLikeBtn"+count}" onclick="addLike(${count},${posts[count].likes});" class="icon" src="images/icon-heart.png" alt="">
+        <img id="${"addLikeBtn"+count}" onclick="like(${count});" class="icon" src="images/icon-heart.png" alt="">
         <img class="icon" src="images/icon-comment.png" alt="">
         <img  class="icon" src="images/icon-dm.png" alt="">
         </div>
@@ -61,31 +56,51 @@ window.onload=function(){
         </section>`
         
     }
+
+
+
+
+// this function is responsible for increment and decrementing of likes it accept a parameter like count, count is the unique key that makes
+// unique ids for like buttons and like contents
+function like(count){
     
-    // addLike();
-    
-    
-    
-}
-function addLike(count,like){
+    // this decleartion help us to access to specific like buttons when we click
     let addLikeBtn = document.getElementById(`addLikeBtn${count}`);
-    let likes = document.getElementById(`likes${count}`);
-    like=like+1;
-    likes.innerHTML=like+" likes";
-    addLikeBtn.style.background="red";
+
+    // this declartion help us to access the specific likes content that we want to increment or decrement 
+    let likesContent = document.getElementById(`likes${count}`)
+
+
+    // here we check if background-color-icon class exist in to addLikeBtn or not, if not exist we will increment the likes by 1
+    // and add this class to addLikeBtn
+    if(!addLikeBtn.classList.contains('background-color-icon')){
+        
+        let likeCount = checkLikes(likesContent)+1
+        likesContent.textContent=likeCount+' likes'
+        addLikeBtn.classList.add('background-color-icon')
+    }
+
+    // here we check if background-color-icon class , if not exist in addLikeBtn we will decrement the likes by 1
+    // and remove this class from addLikeBtn
+    else{
+        let likeCount = checkLikes(likesContent)-1
+        likesContent.textContent=likeCount+' likes'
+        addLikeBtn.classList.remove('background-color-icon')
+        
+    }
+}
+// this function receive likes content as a parameter and split it to get the likes and then change the dataType to integer using Number
+// and the will return to like function
+function checkLikes(likesContent){
+    let likesValues = likesContent.textContent
+        
+
+    // split function used to split likes number from likes text for example likesValues = 224 likes so split function split this from space
+    // between 224 and likes and will make it an array with two item, now i need first value then i used [0] in likesValues
+        likesValues = likesValues.split(' ')
     
+        return Number(likesValues[0])
 }
 
-
-
-
-// likeBtn.addEventListener(("click"),()=>{
-//     console.log("ok");
-// })
-// // function addLike(){
-
-// likeBtn.style.background="red";
-    
-// }
-
+// note: you can use console.log() function in any where for debug and if you feel any confusion
 
